@@ -38,7 +38,7 @@ Script: OP_HASH160 <pubKeyHash> OP_EQUALVERIFY OP_CHECKSIG
 Running: <pubKey> OP_DUP
 Stack: [ <signature> <pubKey> <pubKey> ]
 ```
-Why the duplicate? Because that's what's required by the script!
+Why the duplicate? Because we need to hash one copy, and then the final OP_CHECKSIG requires the pubkey as well.
 
 Next, `OP_HASH160` pops the `<pubKey>` off the stack, hashes it, and puts the result back on the stack.
 ```
